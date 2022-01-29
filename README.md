@@ -85,7 +85,7 @@ void insertionsort(int arr[], int n){
 ```
 
 ## Quick sort
-The Quick sort works upon divide and conquer algorithm where a pivot( the last element in this case ) is picked and partition is done around that pivot by sorting in a way that elements smaller than pivot fall on the left of pivot while the elements greater would lie right of the pivot.
+The Quick sort works upon divide and conquer algorithm where a pivot( the last element in this case ) is picked and partition is done around that pivot by sorting in a way that elements smaller than pivot fall on the left of pivot while the elements greater would lie right of the pivot.\
 While making partition we mostly start from the leftmost element and keep note of index of element smaller than i(th). In that search while traversing, we swap the current j(th) element with i(th) element, if j(th) element is smaller than the pivot. Atlast we place the pivot at its correct position by swapping it with i+1(th) element. (the function also return the index where the partition happened)
 Futher, since quicksort is a recursive function it goes on making partions and sorting until the low of a partition is `>=` high i.e. Single element is left in the partition.
 
