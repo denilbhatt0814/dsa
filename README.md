@@ -7,14 +7,16 @@ In this case the sorted array would be in ascending order.
 * best case : O(n)
 
 ```c
-void bubblesort(int arr[], int n){
-    
+void bubblesort(int arr[], int n)
+{    
     // (n-1) coz size is n but last index of array will be 1 less
     for(int i = 0; i < n-1; i++){
 
         // (n-1)-i bcoz we know last i elements already sorted
-        for(int j = 0; j < n-1-i; j++){
-            if(arr[j] > arr[j+1]){
+        for(int j = 0; j < n-1-i; j++)
+        {
+            if(arr[j] > arr[j+1])
+            {
                 swap(&arr[j], &arr[j+1]);
             }
         }
@@ -30,8 +32,8 @@ The final result is an array in ascending order.
 * best case :  O(n^2)
 
 ```c
-void selectionsort(int arr[], int n){
-
+void selectionsort(int arr[], int n)
+{
     // iterating over the unsorted array
     for (int i = 0; i < n; i++)
     {
@@ -39,10 +41,11 @@ void selectionsort(int arr[], int n){
         // min_i starts at i coz after swaping, first i elements already sorted
         int min_i = i; 
 
-        for(int j = i+1; j < n; j++){
-            
+        for(int j = i+1; j < n; j++)
+        {    
             // If adjacent j(th) element is smaller then current smallest
-            if(arr[j] < arr[min_i]){
+            if(arr[j] < arr[min_i])
+            {
                 // updating index of smallest value
                 min_i = j; 
             }
@@ -62,7 +65,8 @@ The algorithm of insertion sort works by dividing the array in two parts sorted 
 * best case :  O(n)
 
 ```c
-void insertionsort(int arr[], int n){
+void insertionsort(int arr[], int n)
+{
     for (int i = 1; i < n; i++)
     {   
         // first Element of unsorted part
@@ -93,7 +97,8 @@ Futher, since quicksort is a recursive function it goes on making partions and s
 * best case : O(n log(n))
 
 ```c
-int partition(int arr[], int low, int high){
+int partition(int arr[], int low, int high)
+{
     // we are considering the right most element
     // of the unsorted array as pivot
     int pivot = arr[high];
@@ -103,8 +108,10 @@ int partition(int arr[], int low, int high){
 
     // iterating from leftmost Element(low) of unsorted array
     // to an Element before the pivot (high-1)
-    for (int j = low; j < high; j++){
-        if(arr[j] <= pivot){
+    for (int j = low; j < high; j++)
+    {
+        if(arr[j] <= pivot)
+        {
             i++;
             swap(&arr[i], &arr[j]);
         }
